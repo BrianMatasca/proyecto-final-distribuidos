@@ -1,0 +1,78 @@
+DJ ERROR 2025-11-17 18:53:13,307 server Exception inside application: disk I/O error
+Traceback (most recent call last):
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: disk I/O error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\contrib\staticfiles\handlers.py", line 101, in __call__
+    return await self.application(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\routing.py", line 48, in __call__
+    return await application(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\mercury\apps\ws\middleware.py", line 30, in __call__
+    return await super().__call__(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\sessions.py", line 44, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\sessions.py", line 261, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\middleware.py", line 24, in __call__
+    return await self.inner(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\routing.py", line 118, in __call__
+    return await application(
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\consumer.py", line 95, in app
+    return await consumer(scope, receive, send)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\consumer.py", line 58, in __call__
+    await await_many_dispatch(
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\utils.py", line 50, in await_many_dispatch
+    await dispatch(result)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\asgiref\sync.py", line 502, in __call__
+    ret = await asyncio.shield(exec_coro)
+  File "C:\Users\Windows\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\db.py", line 13, in thread_handler
+    return super().thread_handler(loop, *args, **kwargs)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\asgiref\sync.py", line 556, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\consumer.py", line 126, in dispatch
+    handler(message)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\channels\generic\websocket.py", line 112, in websocket_disconnect
+    self.disconnect(message["code"])
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\mercury\apps\ws\worker.py", line 60, in disconnect
+    self.worker_session.save()
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Windows\Documents\ICESI\Semestre9\distribuidos\proyecto_final\DataSet\mercury_env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: disk I/O error

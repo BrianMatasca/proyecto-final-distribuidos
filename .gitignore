@@ -1,0 +1,10 @@
+.ipynb_checkpoints
+
+mercury_env
+env
+.env
+
+Products
+Transactions
+
+association_rules.pkl
