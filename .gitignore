@@ -4,6 +4,10 @@ mercury_env
 env
 .env
 
+.vscode
+django-errors.log
+
+
 Products
 Transactions
 
